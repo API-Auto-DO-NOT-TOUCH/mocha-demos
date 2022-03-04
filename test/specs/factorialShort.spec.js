@@ -4,6 +4,12 @@ const spies = require('chai-spies');
 const { expect } = require('chai');
 chai.use(spies);
 console.log("test");
+
+    
+it.todo = function (title, callback) {
+    return it.skip("TODO: " + title, callback)
+};
+
 describe('factorialShort', function() {
     let factorial, spy;
 
@@ -15,12 +21,13 @@ describe('factorialShort', function() {
     afterEach(() => {
         factorial = null;
     });
-    
-    it.todo('should return 6 when called with number 3');
 
-//     it('should return 6 when called with number 3', function() {
-//         expect(factorial.factorialShort(3)).to.be.equal(6);
-//     });
+    it.todo("this test wants to be todo'd", function () {
+    });
+
+    it('should return 6 when called with number 3', function() {
+        expect(factorial.factorialShort(3)).to.be.equal(6);
+    });
 
     it('should return 362880 when called with number 9', function() {
         expect(factorial.factorialShort(9)).to.be.equal(362880);
