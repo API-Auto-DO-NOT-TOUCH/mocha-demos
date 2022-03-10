@@ -38,4 +38,10 @@ describe('factorialSimple', function() {
     it('should return 1 when provided 1', function() {
         expect(factorial.factorialSimple(1)).to.be.equal(1);
     });
+    
+    it('should should detect multiple of 3', () => {
+        const number = Math.floor(Math.random() * 10);
+        const result = number % 3;
+        expect(result).toBe(0);
+    });
 });
